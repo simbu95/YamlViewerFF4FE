@@ -19,6 +19,7 @@
 <script>
   function YamlViewModel() {
     var self = this;
+    self.baseString=""
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.uploadYAML = function (file){
       f= new FileReader();
@@ -38,8 +39,15 @@
               delete(b[i][c]);
             }
           }
+          a=Object.keys(b[i]);
+          if(a.length==1){
+            if(a[0]=="On"){
+              self.baseString+= i + a[0]
+            }
+          }
         }
         console.log(b)
+        console.log(self.baseString)
       };
       
     }
