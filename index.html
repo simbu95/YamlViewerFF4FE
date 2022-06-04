@@ -13,12 +13,8 @@
       <label for="Yaml"> Select your YAML: </label>
       <input type="file" name="Yaml" id="Yaml" accept=".yaml" data-bind="event: { change: function() { uploadYAML($element.files[0]) } }" />
   </div>
-  <div>
-    <span data-bind="text: flags"></span>
-  </div>
-  <div>
-    <span data-bind="text: yam"></span>
-  </div>
+  <div data-bind="html: flags"></div>
+  <div data-bind="html: yam"></div>
 </body>
 
 <script>
@@ -95,8 +91,8 @@
         
         console.log(YAML.dump(self.x))
         console.log(self.baseString)
-        self.yam(YAML.dump(self.x))
-        self.flags(self.baseString)
+        self.yam(YAML.dump(self.x).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+        self.flags(self.baseString.replace(/(?:\r\n|\r|\n)/g, '<br>'))
       };
       
       self.parseSub=function(){
