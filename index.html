@@ -1,4 +1,32 @@
 
-<div>
-This is a test page
-</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+
+<body>
+  
+  <div>
+  This is a test page
+  </div>
+  <div class="row">
+      <label for="Yaml"> Maximum number of Steps: </label>
+      <input type="string" name="Yaml" id="Yaml" data-bind="value: yaml" />
+  </div>
+  <button data-bind="click: Submit">Submit Yaml</button>
+
+</body>
+
+<script>
+  function YamlViewModel() {
+    var self = this;
+        //Knockout obervables, which will be editted by the client, and then used later. 
+    self.yaml=ko.observable("");
+    //$.getJSON("static/test.yaml", function (data) {
+    //        //Variables for storing global data. 
+    //        self.yaml=data.Data;
+    //    });
+    self.submit = function () {
+    }
+  }
+  ko.applyBindings(new EncountersViewModel());
+</script>
