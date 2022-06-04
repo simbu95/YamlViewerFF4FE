@@ -11,7 +11,7 @@
   </div>
   <div class="row">
       <label for="Yaml"> Select your YAML: </label>
-      <input type="file" name="Yaml" id="Yaml" accept="*.yaml" data-bind="event: { change: function() { uploadYAML($element.files[0]) } }" />
+      <input type="file" name="Yaml" id="Yaml" accept=".yaml" data-bind="event: { change: function() { uploadYAML($element.files[0]) } }" />
   </div>
 
 </body>
@@ -21,8 +21,9 @@
     var self = this;
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.uploadYAML = function (file){
-      self.x=YAML.parseFile(file);
-      console.log(x);
+      f= new FileReader(file);
+      self.x=YAML.parseFile(f.readAsText());
+      console.log(self.x);
     }
   }
   ko.applyBindings(new YamlViewModel());
