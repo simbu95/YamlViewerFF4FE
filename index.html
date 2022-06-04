@@ -16,7 +16,11 @@
   <div data-bind="html: flags"></div>
   <br>
   <br>
-  <div data-bind="html: yam"></div>
+  <div >
+    <pre>
+      <span data-bind="text: yam"><span>
+    </pre>
+  </div>
 </body>
 
 <script>
@@ -93,7 +97,7 @@
         
         console.log(YAML.dump(self.x))
         console.log(self.baseString)
-        self.yam(YAML.dump(self.x,1).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+        self.yam(YAML.dump(self.x,1))
         self.flags(self.baseString.replace(/(?:\r\n|\r|\n)/g, '<br>'))
       };
       
