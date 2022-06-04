@@ -30,28 +30,71 @@
         console.log(f.result);
         self.x=YAML.parse(f.result);
         console.log(self.x);
-        b=self.x["bosses"];
-        k=Object.keys(b);
-        for( i of k){
-          a=Object.keys(b[i]);
-          for(c of a){
-            if(b[i][c]==0){
-              delete(b[i][c]);
-            }
-          }
-          a=Object.keys(b[i]);
-          if(a.length==1){
-            if(a[0]=="On"){
-              self.baseString+= i +" ";
-            } else if(a[0]!="Off"){
-              self.baseString+= i +":" a[0]+" ";
-            }
-          }
-        }
-        console.log(b)
+        
+        y=self.x["objectives"]
+        self.baseString+= "Objectives: "
+        self.parseSub(y)
+        
+        y=self.x["keyitems"]
+        self.baseString+= "Keyitems: "
+        self.parseSub(y)
+        
+        y=self.x["pass"]
+        self.baseString+= "Pass: "
+        self.parseSub(y)
+        
+        y=self.x["characters"]
+        self.baseString+= "Characters: "
+        self.parseSub(y)
+        
+        y=self.x["treasures"]
+        self.baseString+= "Treasures: "
+        self.parseSub(y)
+        
+        y=self.x["shops"]
+        self.baseString+= "Shops: "
+        self.parseSub(y)
+        
+        y=self.x["encounters"]
+        self.baseString+= "Encounters: "
+        self.parseSub(y)
+        
+        y=self.x["glitches"]
+        self.baseString+= "Glitches: "
+        self.parseSub(y)
+        
+        y=self.x["other"]
+        self.baseString+= "Other: "
+        self.parseSub(y)
+        
+        y=self.x["misc_vanilla"]
+        self.baseString+= "misc_vanilla: "
+        self.parseSub(y)
+        
+        console.log(self.x)
         console.log(self.baseString)
       };
       
+      self.parseSub=function(a){
+        k=Object.keys(a);
+        for( i of k){
+          b=Object.keys(a[i]);
+          for(c of b){
+            if(a[i][c]==0){
+              delete(a[i][c]);
+            }
+          }
+          b=Object.keys(a[i]);
+          if(b.length==1){
+            if(b[0]=="On"){
+              self.baseString+= i +" ";
+            } else if(b[0]!="Off"){
+              self.baseString+= i +":" b[0]+" ";
+            }
+            delete(a)
+          }
+        }
+      }
     }
   }
   ko.applyBindings(new YamlViewModel());
