@@ -29,7 +29,7 @@
         console.log(f.result);
         self.x=YAML.parse(f.result);
         console.log(self.x);
-        b=x["bosses"];
+        b=self.x["bosses"];
         k=keys(b);
         for( i of k){
           a=keys(b[i]);
