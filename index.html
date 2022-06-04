@@ -93,7 +93,7 @@
         
         console.log(YAML.dump(self.x))
         console.log(self.baseString)
-        self.yam(YAML.dump(self.x).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+        self.yam(YAML.dump(self.x,1).replace(/(?:\r\n|\r|\n)/g, '<br>'))
         self.flags(self.baseString.replace(/(?:\r\n|\r|\n)/g, '<br>'))
       };
       
