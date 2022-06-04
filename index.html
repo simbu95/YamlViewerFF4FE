@@ -11,7 +11,7 @@
   </div>
   <div class="row">
       <label for="Yaml"> Select your YAML: </label>
-      <input type="file" name="Yaml" id="Yaml" accept="*.yaml" "event: { change: function() { uploadYAML($element.files[0]) } }" />
+      <input type="file" name="Yaml" id="Yaml" accept="*.yaml" data-bind="event: { change: function() { uploadYAML($element.files[0]) } }" />
   </div>
 
 </body>
