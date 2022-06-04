@@ -22,7 +22,7 @@
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.uploadYAML = function (file){
       self.x=YAML.parseFile(file);
-      console.log(x)
+      console.log(x);
     }
   }
   ko.applyBindings(new YamlViewModel());
