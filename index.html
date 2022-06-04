@@ -30,9 +30,9 @@
         self.x=YAML.parse(f.result);
         console.log(self.x);
         b=self.x["bosses"];
-        k=keys(b);
+        k=Object.keys(b);
         for( i of k){
-          a=keys(b[i]);
+          a=Object.keys(b[i]);
           for(c of a){
             if(b[i][c]==0){
               delete(b[i][c]);
