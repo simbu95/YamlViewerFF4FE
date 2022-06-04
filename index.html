@@ -13,13 +13,20 @@
       <label for="Yaml"> Select your YAML: </label>
       <input type="file" name="Yaml" id="Yaml" accept=".yaml" data-bind="event: { change: function() { uploadYAML($element.files[0]) } }" />
   </div>
-
+  <div>
+    <span data-bind="text: flags"></span>
+  </div>
+  <div>
+    <span data-bind="text: yam"></span>
+  </div>
 </body>
 
 <script>
   function YamlViewModel() {
     var self = this;
     self.baseString=""
+    self.flags=ko.observable()
+    self.yam=ko.observable()
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.uploadYAML = function (file){
       f= new FileReader();
@@ -86,8 +93,10 @@
         self.parseSub()
         self.baseString+= "\n"
         
-        console.log(self.x)
+        console.log(YAML.dump(self.x))
         console.log(self.baseString)
+        self.yam(YAML.dump(self.x))
+        self.flags(self.baseString)
       };
       
       self.parseSub=function(){
