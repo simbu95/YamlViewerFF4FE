@@ -45,33 +45,63 @@
         console.log(self.x);
         
         self.y=self.x["objectives"]
-        self.baseString+= "Objectives: "
-        self.parseSub()
-        self.baseString+= "\n"
+        self.baseString+= "Objectives: ";
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
+        self.baseString+= "\n";
         
         self.y=self.x["keyitems"]
         self.baseString+= "Keyitems: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["pass"]
         self.baseString+= "Pass: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["characters"]
         self.baseString+= "Characters: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["treasures"]
         self.baseString+= "Treasures: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["shops"]
         self.baseString+= "Shops: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["bosses"]
@@ -86,17 +116,32 @@
         
         self.y=self.x["glitches"]
         self.baseString+= "Glitches: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["other"]
         self.baseString+= "Other: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["misc_vanilla"]
         self.baseString+= "misc_vanilla: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         console.log(YAML.dump(self.x))
