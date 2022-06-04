@@ -31,77 +31,82 @@
         self.x=YAML.parse(f.result);
         console.log(self.x);
         
-        y=self.x["objectives"]
+        self.y=self.x["objectives"]
         self.baseString+= "Objectives: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["keyitems"]
+        self.y=self.x["keyitems"]
         self.baseString+= "Keyitems: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["pass"]
+        self.yelf.y=self.x["pass"]
         self.baseString+= "Pass: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["characters"]
+        self.y=self.x["characters"]
         self.baseString+= "Characters: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["treasures"]
+        self.y=self.x["treasures"]
         self.baseString+= "Treasures: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["shops"]
+        self.y=self.x["shops"]
         self.baseString+= "Shops: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["encounters"]
+        self.y=self.x["bosses"]
+        self.baseString+= "Bosses: "
+        self.parseSub()
+        self.baseString+= "\n"
+        
+        self.y=self.x["encounters"]
         self.baseString+= "Encounters: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["glitches"]
+        self.y=self.x["glitches"]
         self.baseString+= "Glitches: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["other"]
+        self.y=self.x["other"]
         self.baseString+= "Other: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
-        y=self.x["misc_vanilla"]
+        self.y=self.x["misc_vanilla"]
         self.baseString+= "misc_vanilla: "
-        self.parseSub(y)
+        self.parseSub()
         self.baseString+= "\n"
         
         console.log(self.x)
         console.log(self.baseString)
       };
       
-      self.parseSub=function(a){
-        k=Object.keys(a);
+      self.parseSub=function(){
+        k=Object.keys(self.y);
         for( i of k){
-          b=Object.keys(a[i]);
+          b=Object.keys(self.y[i]);
           for(c of b){
-            if(a[i][c]==0){
+            if(self.y[i][c]==0){
               delete(a[i][c]);
             }
           }
-          b=Object.keys(a[i]);
+          b=Object.keys(self.y[i]);
           if(b.length==1){
             if(b[0]=="On"){
               self.baseString+= i + " ";
             } else if(b[0]!="Off"){
               self.baseString+= i + ":" + b[0] + " ";
             }
-            delete(a)
+            delete(self.y[i])
           }
         }
       }
