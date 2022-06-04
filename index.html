@@ -27,7 +27,7 @@
       
       f.onload = function() {
         console.log(f.result);
-        self.x=YAML.parseFile(f.result);
+        self.x=YAML.parse(f.result);
         console.log(self.x);
       };
       
