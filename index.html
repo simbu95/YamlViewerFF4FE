@@ -23,7 +23,7 @@
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.yaml=ko.observable("");
     self.submit = function () {
-      console.log(yaml);
+      console.log(self.yaml());
     }
   }
   ko.applyBindings(new YamlViewModel());
