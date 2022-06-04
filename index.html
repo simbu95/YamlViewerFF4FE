@@ -42,9 +42,9 @@
           a=Object.keys(b[i]);
           if(a.length==1){
             if(a[0]=="On"){
-              self.baseString+= i;
+              self.baseString+= i +" ";
             } else if(a[0]!="Off"){
-              self.baseString+= i + a[0];
+              self.baseString+= i +":" a[0]+" ";
             }
           }
         }
