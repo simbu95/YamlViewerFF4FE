@@ -21,8 +21,8 @@
     var self = this;
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.uploadYAML = function (file){
-      f= new FileReader(file);
-      self.x=YAML.parseFile(f.readAsText());
+      f= new FileReader();
+      self.x=YAML.parseFile(f.readAsText(file));
       console.log(self.x);
     }
   }
