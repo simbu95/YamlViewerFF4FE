@@ -9,7 +9,7 @@
   This is a test page
   </div>
   <div class="row">
-      <label for="Yaml"> Maximum number of Steps: </label>
+      <label for="Yaml"> Enter your YAML: </label>
       <input type="string" name="Yaml" id="Yaml" data-bind="value: yaml" />
   </div>
   <button data-bind="click: Submit">Submit Yaml</button>
@@ -21,12 +21,8 @@
     var self = this;
         //Knockout obervables, which will be editted by the client, and then used later. 
     self.yaml=ko.observable("");
-    //$.getJSON("static/test.yaml", function (data) {
-    //        //Variables for storing global data. 
-    //        self.yaml=data.Data;
-    //    });
     self.submit = function () {
     }
   }
-  ko.applyBindings(new EncountersViewModel());
+  ko.applyBindings(new YamlViewModel());
 </script>
