@@ -1,0 +1,364 @@
+weights_nickname: Famed Mimic GOGO
+author: Alchemie
+
+
+objectives:
+  # If "none" rolls "On" all other objective flags will be forced "Off"
+  None:
+    On: 0
+    Off: 100
+  Orandom:
+    0: 0
+    1: 0
+    2: 0
+    3: 5
+    4: 15
+    5: 25
+    6: 50
+    7: 5
+    8: 0
+  Orandomtoughquest: # If Orandomquest rolls "On", this weight will be ignored.
+    On: 100
+    Off: 0
+  Orandomboss:
+    On: 50
+    Off: 50
+  Orandomchar:
+    On: 0
+    Off: 100
+  # If this rolls higher than the total number of objectives, "all" will be forced.
+  Oreq:
+    1: 0
+    2: 0
+    3: 5
+    4: 15
+    5: 20
+    6: 50
+    7: 10
+    8: 0
+    9: 0
+    10: 0
+    all: 0
+  Owingame:
+    On: 0
+    Off: 100
+
+keyitems:
+  summon:
+    On: 75
+    Off: 25
+  moon:
+    On: 50
+    Off: 50
+  trap:
+    On: 0
+    Off: 100
+  unsafe:
+    On: 0
+    Off: 100
+  force:
+    hook: 0
+    magma: 75
+    Off: 25
+  nofree:
+    On: 0
+    Off: 100
+
+pass:
+  none:
+    On: 5
+    Off: 95
+  shop:
+    On: 25
+    Off: 75
+  key:
+    On: 75
+    Off: 25
+  chests:
+    On: 35
+    Off: 65
+
+characters:
+  # If "vanilla" rolls "On": maybe, distinct, and only will be forced "Off"
+  vanilla:
+    On: 0
+    Off: 100
+  relaxed:
+    On: 100
+    Off: 0
+  maybe:
+    On: 0
+    Off: 100
+  distinct:
+    1: 100
+    2: 0
+    3: 0
+    4: 0
+    5: 0
+    6: 0
+    7: 0
+    8: 0
+    9: 0
+    10: 0
+    11: 0
+    Off: 0
+  # In lieu of having both "only" and "no" available, Tricker only uses "only".
+  # If "onlyenabled" rolls "On", only will be rolled based on the result of "NumberOfOnly"
+  # If there are no weights for "NumberOfOnly", the default will be 9.
+  onlyenabled:
+    On: 100
+    Off: 0
+  only:
+    cecil: 5
+    kain: 15
+    rydia: 15
+    tellah: 2
+    edward: 3
+    rosa: 15
+    yang: 6
+    palom: 10
+    porom: 7
+    cid: 15
+    edge: 5
+    fusoya: 2
+  # This will determine how many will be rolled for the "only" flag.
+  numberOfOnly:
+    1: 100
+    2: 0
+    3: 0
+    4: 0
+    5: 0
+    6: 0
+    7: 0
+    8: 0
+    9: 0
+    10: 0
+    11: 0
+  # This will determine how many will be rolled for the "only" flag.
+  jspells:
+    On: 0
+    Off: 100
+  jabilities:
+    On: 100
+    Off: 0
+  nekkie:
+    On: 0
+    Off: 100
+  nodupes:
+    On: 0
+    Off: 100
+  bye:
+    On: 0
+    Off: 100
+  party:
+    1: 0
+    2: 0
+    3: 0
+    4: 0
+    Off: 100
+  permajoin:
+    On: 100
+    Off: 0
+  death:
+    permadeath: 0
+    permadeader: 0
+    Off: 100
+  hero:
+    On: 100
+    Off: 0
+  noearned:
+    On: 0
+    Off: 100
+  nofree:
+    On: 0
+    Off: 100
+
+treasures:
+  chest:
+    # If "vanilla" or "shuffle" rolls "On", noj, maxtier, and junk will be forced "Off".
+    vanilla: 0
+    shuffle: 0
+    standard: 0
+    pro: 25
+    wild: 0
+    wildish: 75
+    empty: 0
+  sparse:
+    10: 0
+    20: 0
+    30: 0
+    40: 0
+    0: 0
+    60: 0
+    70: 5
+    80: 5
+    90: 5
+    Off: 85
+  noj:
+    On: 10
+    Off: 90
+  maxtier:
+    3: 0
+    4: 0
+    5: 0
+    6: 5
+    7: 25
+    Off: 70
+  junk:
+    junk: 0
+    money: 0
+    Off: 100
+
+shops:
+  shop:
+    # If "vanilla", "shuffle", "cabins", or "empty" rolls "On", unsafe, noj, noapples, nosirens, and nolife will be forced "Off".
+    vanilla: 0
+    shuffle: 0
+    standard: 75
+    pro: 0
+    wild: 25
+    cabins: 0
+    empty: 0
+  unsafe:
+    On: 0
+    Off: 100
+  free:
+    On: 0
+    Off: 100
+  sell:
+    quarter: 15
+    zero: 0
+    Off: 85
+  noj:
+    On: 0
+    Off: 100
+  noapples:
+    On: 75
+    Off: 15
+  nosirens:
+    On: 15
+    Off: 75
+  nolife:
+    On: 0
+    Off: 100
+
+bosses:
+  # If "vanilla" rolls "On", unsafe will be forced "Off".
+  vanilla:
+    On: 0
+    Off: 100
+  unsafe:
+    On: 0
+    Off: 100
+  altgauntlet:
+    On: 100
+    Off: 0
+  wyvern:
+    normal: 0
+    whyburn: 0
+    whichburn: 100
+  nofree:
+    On: 0
+    Off: 100
+
+encounters:
+  # If "vanilla" is rolled, "keepdoors", "keepbehemoths", and "danger" weights will be ignored.
+  # If "reduce" is rolled, "danger" weight will be ignored.
+  rate:
+    vanilla: 0
+    toggle: 100
+    reduce: 0
+    noencounters: 0
+  keepdoors:
+    On: 0
+    Off: 100
+  keepbehemoths:
+    On: 0
+    Off: 100
+  danger:
+    On: 0
+    Off: 100
+  drops:
+    nosirens: 0
+    nojdrops: 0
+    normal: 100
+  cantrun:
+    On: 0
+    Off: 100
+  noexp:
+    On: 0
+    Off: 100
+
+glitches:
+  dupe:
+    On: 0
+    Off: 100
+  mp:
+    On: 100
+    Off: 0
+  warp:
+    On: 75
+    Off: 15
+  life:
+    On: 100
+    Off: 0
+  sylph:
+    On: 100
+    Off: 0
+  backrow:
+    On: 75
+    Off: 15
+  64:
+    On: 0
+    Off: 100
+
+other:
+  kits:
+    basic: 15
+    better: 50
+    loaded: 75
+    cata: 70
+    freedom: 70
+    cid: 70
+    yang: 50
+    money: 25
+    grabbag: 25
+    trap: 25
+    archer: 15
+    fabul: 15
+    castlevania: 15
+    summon: 25
+    notdeme: 35
+    meme: 35
+    defense: 25
+    mist: 40
+    mysidia: 50
+    baron: 35
+    dwarf: 25
+    eblan: 35
+    libra: 0
+    green: 5
+    99: 5
+    random: 15
+  # If more than one mode is needed, those more likely to be selected with the above weights will still be selected more often.
+  numberOfKits:
+    0: 0
+    1: 0
+    2: 0
+    3: 100
+  allowDuplicateKits:
+    Yes: 0
+    No: 100
+  noadamants:
+    On: 25
+    Off: 75
+  nocursed:
+    On: 0
+    Off: 100
+  spoon:
+    On: 100
+    Off: 0
+misc_vanilla:
+  traps:
+    On: 50
+    Off: 50
