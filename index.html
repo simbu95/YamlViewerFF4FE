@@ -29,6 +29,17 @@
         console.log(f.result);
         self.x=YAML.parse(f.result);
         console.log(self.x);
+        b=x["bosses"];
+        k=keys(b);
+        for( i of k){
+          a=keys(b[i]);
+          for(c of a){
+            if(b[i][c]==0){
+              delete(b[i][c]);
+            }
+          }
+        }
+        console.log(b)
       };
       
     }
