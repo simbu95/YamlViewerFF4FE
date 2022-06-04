@@ -10,10 +10,9 @@
   This is a test page
   </div>
   <div class="row">
-      <label for="Yaml"> Enter your YAML: </label>
-      <input type="string" name="Yaml" id="Yaml" data-bind="value: yaml" />
+      <label for="Yaml"> Select your YAML: </label>
+      <input type="string" name="Yaml" id="Yaml" accept="*.yaml" "event: { change: function() { uploadYAML($element.files[0]) } }" />
   </div>
-  <button data-bind="click: submit">Submit Yaml</button>
 
 </body>
 
@@ -21,9 +20,9 @@
   function YamlViewModel() {
     var self = this;
         //Knockout obervables, which will be editted by the client, and then used later. 
-    self.yaml=ko.observable("");
-    self.submit = function () {
-      console.log(self.yaml());
+    self.uploadYAML = function (file){
+      self.x=YAML.parseFile(file);
+      console.log(x)
     }
   }
   ko.applyBindings(new YamlViewModel());
