@@ -106,12 +106,22 @@
         
         self.y=self.x["bosses"]
         self.baseString+= "Bosses: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="None";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["encounters"]
         self.baseString+= "Encounters: "
-        self.parseSub()
+        if(self.y == undefined){
+          self.baseString+="Toggle";
+        }
+        else{
+          self.parseSub();
+        }
         self.baseString+= "\n"
         
         self.y=self.x["glitches"]
